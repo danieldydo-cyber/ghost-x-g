@@ -11,7 +11,7 @@ button.on{background:#7CFFCB!important;color:#000!important}
 #splash{background:radial-gradient(#1b0b33,#000)!important}#splash h1{letter-spacing:4px}
 .gfog{position:fixed;font-size:46px;opacity:.10;pointer-events:none;z-index:0;animation:gfl 14s linear infinite}
 @keyframes gfl{0%{transform:translate(-10vw,100vh) rotate(-8deg)}100%{transform:translate(110vw,-20vh) rotate(8deg)}}
-</style><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ghost X G 🐲 v1.0</title>
+</style><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ghost X G 🐲 v1.1</title>
 <style>
 body{margin:0;background:#07020f;color:#e8f;font-family:system-ui,sans-serif}
 #splash{position:fixed;inset:0;background:radial-gradient(#3a0060,#000);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9;transition:opacity 1s}
@@ -34,9 +34,9 @@ button{background:#14002a;color:#0ff;border:1px solid #0ff;border-radius:8px;pad
 #brain{position:sticky;top:0;z-index:5;background:#0a0018ee;border-bottom:1px solid #f0f;padding:5px;font-size:.8em;text-align:center;color:#0ff}
 .steps{display:grid;grid-template-columns:repeat(16,1fr);gap:2px}.steps b{height:22px;background:#200040;border-radius:3px;cursor:pointer}.steps b.x{background:#f0f;box-shadow:0 0 6px #f0f}
 </style></head><body>
-<div id="splash"><div class="d">👻🐲</div><h1>GHOST X G</h1><div style="color:#B388FF">GHOST AI · v1.0 · DJ DaX Kraków</div></div>
+<div id="splash"><div class="d">👻🐲</div><h1>GHOST X G</h1><div style="color:#B388FF">GHOST AI · v1.1 · DJ DaX Kraków</div></div>
 <div id="brain">🧠 Mózg SI: <span id="bs">gotowy</span></div>
-<h1>👻 Ghost X G 🐲</h1><div class="sub">GHOST AI v1.0 · DJ DaX · Kraków · silnik DJ 777 SI v5</div>
+<h1>👻 Ghost X G 🐲</h1><div class="sub">GHOST AI v1.1 · DJ DaX · Kraków · silnik DJ 777 SI v5</div>
 <a href="Ghost-X-G.apk" download style="display:block;text-align:center;margin:10px auto;width:80%;background:linear-gradient(90deg,#B388FF,#7CFFCB);color:#000;padding:13px;border-radius:30px;font-weight:bold;text-decoration:none;box-shadow:0 0 20px #B388FF">⬇ Pobierz Ghost X G APK (free)</a><p style="text-align:center"><a href="downloads.html" style="color:#7CFFCB">📦 Darmowe pobieranie (wszystkie aplikacje + Mózg AI)</a> · <a href="sales.html" style="color:#B388FF">💎 PRO</a></p><nav id="nav"></nav>
 <div class="p" id="t-dj"><div class="box row"><b>Master</b> <input type="range" id="mv" min="0" max="1" step=".01" value=".8" style="width:150px"> <button onclick="B.stopAll()">⏹ STOP ALL</button></div><div class="decks" id="decks"></div></div>
 <div class="p" id="t-ai"><div class="box"><h3>🤖 AI DJ / Auto Mix</h3><p>SI sama wybiera decki, zgrywa BPM i płynnie miksuje co kilka taktów.</p>
@@ -609,7 +609,7 @@ const _b3=brain;brain=function(q){const s=q.toLowerCase();
 <p id="cards"></p>
 <a class="wa" id="prowa" target="_blank">💬 Wyślij potwierdzenie na WhatsApp</a>
 <p style="font-size:.8em;color:#aaa">Płatność weryfikuje ręcznie Daniel (bez automatów). Po zaksięgowaniu dostaniesz na WhatsApp klucz PRO przypisany do Twojego numeru zamówienia — zwykle tego samego dnia.</p></div>
-<div class="row"><input id="pkey_in" style="flex:1;padding:8px;background:#14002a;color:#fff;border:1px solid #0ff;border-radius:8px" placeholder="Wklej klucz PRO (PRO.DX-…)"><button onclick="PRO.activate(pkey_in.value).then(r=>pro_msg.textContent=r)">🔓 Aktywuj</button></div>
+<div class="row"><input id="pkey_in" style="flex:1;padding:8px;background:#14002a;color:#fff;border:1px solid #0ff;border-radius:8px" placeholder="Wklej klucz PRO (PRO.DX-…) lub kod"><button onclick="PRO.activate(pkey_in.value).then(r=>pro_msg.textContent=r)">🔓 Aktywuj</button></div>
 <p><a href="downloads.html" target="_blank" style="color:#0ff">📦 Darmowe pobieranie: aplikacje + Mózg AI</a> · <a href="sales.html" target="_blank" style="color:#f0f">🛒 Strona sprzedaży</a></p></div></div>
 <style>.deck.locked{opacity:.45;position:relative}.deck.locked::after{content:'🔒 PRO';position:absolute;top:8px;right:10px;color:#ff0;font-weight:bold}#protab td{border:1px solid #333;padding:4px}</style>
 <script>
@@ -623,7 +623,9 @@ const PRO={pub:'BA6xymgoAHBLGn5v8Ey_WIccHk9nuEzab5sQ_R2n6mCcSeHSjbpUaglGFdSF24S-
  FREE_PACKS:['techno-peak','house','boom-bap'],FREE_VIZ:['bars','wave','particles','dragon','tunnel'],lastPack:'techno-peak',
  order(){let o=localStorage.getItem('dj777.order');if(!o){const A='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';o='DX-'+Array.from(crypto.getRandomValues(new Uint8Array(6)),b=>A[b%A.length]).join('');localStorage.setItem('dj777.order',o)}return o},
  ub(s){s=s.replace(/-/g,'+').replace(/_/g,'/');s+='='.repeat((4-s.length%4)%4);return Uint8Array.from(atob(s),c=>c.charCodeAt(0))},
- async verify(key){const m=String(key||'').trim().match(/^PRO\.(DX-[A-Z0-9]{6,12})\.([A-Za-z0-9_-]{80,90})$/);if(!m||!crypto.subtle)return false;
+ osalt:'c1352a90b5ac3939d3e203a7601fa87a',oh:'b0f4d9b981b674bd22d035a50203d5a7fcf3900c3a827ab40262efa10919c0a0',
+ async owner(c){const m=String(c||'').trim().toLowerCase().match(/^(?:kod\s*)?(\d{3,10})$/);if(!m||!crypto.subtle)return false;const d=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(this.osalt+'|'+m[1]));return [...new Uint8Array(d)].map(b=>b.toString(16).padStart(2,'0')).join('')===this.oh},
+ async verify(key){if(await this.owner(key))return true;const m=String(key||'').trim().match(/^PRO\.(DX-[A-Z0-9]{6,12})\.([A-Za-z0-9_-]{80,90})$/);if(!m||!crypto.subtle)return false;
   try{const k=await crypto.subtle.importKey('raw',this.ub(this.pub),{name:'ECDSA',namedCurve:'P-256'},false,['verify']);return await crypto.subtle.verify({name:'ECDSA',hash:'SHA-256'},k,this.ub(m[2]),new TextEncoder().encode('DJ777SI-PRO|'+m[1]))}catch(e){return false}},
  async init(){const k=localStorage.getItem('dj777.key');this.on=!!(k&&await this.verify(k));this.apply()},
  async activate(k){if(await this.verify(k)){localStorage.setItem('dj777.key',k.trim());this.on=true;this.apply();return '💎 PRO aktywne — dziękuję! Wszystkie funkcje odblokowane.'}return '❌ Nieprawidłowy klucz (sprawdź, czy wkleiłeś całość).'},
@@ -696,6 +698,7 @@ const _b4=brain;brain=function(q){const s=q.toLowerCase();
   return '🧠 Mózg AI: wybierz model — "mózg qwen" (491 MB, zalecany), "mózg smol" (105 MB), "mózg 360", "mózg 1.5". Potem "mózg on".'}
  if(/^pro\b|kup pro|\bpro\?|cena pro|licencj/.test(s)){tab('pro');return PRO.on?'💎 Masz PRO.':`💎 PRO: 5 zł / 1 € / 1 $. BLIK 730 377 357 lub przelew Nest Bank PL45 1870 1045 2083 1058 7576 0001 (Daniel Dydo), tytuł: ${BRAND.name} PRO ${PRO.order()}. Potem WhatsApp → dostaniesz klucz.`}
  if(!PRO.on&&/pady|paczk|pack|sample/.test(s)){const p=findPack(s);if(p&&!PRO.FREE_PACKS.includes(p)){PRO.need('Paczka '+p);return '🔒 Paczka '+p+' jest w PRO. FREE: '+PRO.FREE_PACKS.join(', ')}}
+ if(/^\s*(kod\s*)?\d{3,10}\s*$/i.test(q)){PRO.activate(q).then(r=>say('b',r));return '🔑 Sprawdzam kod…'}
  const k=q.match(/PRO\.DX-[A-Z0-9]{6,12}\.[A-Za-z0-9_-]{80,90}/);if(k){PRO.activate(k[0]).then(r=>say('b',r));return '🔑 Sprawdzam klucz…'}
  if(/pobier|download|apk/.test(s)&&/darm|free|hub|wszystk/.test(s)){window.open('downloads.html','_blank');return '📦 Darmowe pobieranie: downloads.html'}
  const r=_b4(q);return /pomoc|help|komend/.test(s)?r+' · v5: mózg qwen / mózg smol / mózg on / mózg off / mózg status · pro · kup pro · (wklej klucz PRO.DX-…) · darmowe pobieranie':r};
